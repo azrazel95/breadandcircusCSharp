@@ -2,12 +2,18 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using MySql.Data.MySqlClient;
+using WebApplication1.Models;
+
+
 
 public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllersWithViews();
+        services.AddDbContext<BreadandCircusContext>();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
