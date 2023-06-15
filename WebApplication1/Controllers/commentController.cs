@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApplication1.Models;
 
-namespace WebApplication1.Models
+namespace WebApplication1.Controllers
 {
-    public class HomeController : Controller
+    public class commentController : Controller
     {
         public IActionResult Index()
         {
-            return View();
+            BreadandCircusContext context = HttpContext.RequestServices.GetService(typeof(WebApplication1.Models.BreadandCircusContext)) as BreadandCircusContext;
+            return View(context.GetAllComments());
         }
     }
 }

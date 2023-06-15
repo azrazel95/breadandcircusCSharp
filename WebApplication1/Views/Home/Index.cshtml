@@ -2,7 +2,14 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<<div class="row card mb-4 project">
+  <div class="card-body ">
+    {{!-- inserts the data based on posts --}}
+    <h5 class="card-title "><a href="/posts/{{post.id}}">{{post.post_name}}</a></h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Created by {{post.user.name}}</h6>
+    <p class="card-text"></p>
+  <p>
+      {{post.description}}
+    </p>
+  </div>
 </div>
